@@ -116,8 +116,8 @@ public class StackConfig extends JavaScriptObject {
 	public native final void setEventsHandler(String mask,
 			IStackEventHandler callback) /*-{
 		var callbackFunc = function(e) {
-			var ev = @it.netgrid.gwt.sipml5.StackEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-			callback.@it.netgrid.gwt.sipml5.handler.IStackEventHandler::onEvent(Lit/netgrid/gwt/sipml5/StackEvent;)(ev);
+			var ev = @it.netgrid.gwt.sipml5.event.StackEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+			callback.@it.netgrid.gwt.sipml5.handler.IStackEventHandler::onEvent(Lit/netgrid/gwt/sipml5/event/StackEvent;)(ev);
 		};
 
 		this.events_listener = {

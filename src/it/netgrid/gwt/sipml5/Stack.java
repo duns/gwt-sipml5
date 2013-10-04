@@ -2,7 +2,6 @@ package it.netgrid.gwt.sipml5;
 
 import it.netgrid.gwt.sipml5.config.Configuration;
 import it.netgrid.gwt.sipml5.config.StackConfig;
-import it.netgrid.gwt.sipml5.session.ASession;
 import it.netgrid.gwt.sipml5.session.Call;
 import it.netgrid.gwt.sipml5.session.Message;
 import it.netgrid.gwt.sipml5.session.Publish;
@@ -13,6 +12,21 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class Stack {
 	private final JavaScriptObject instance;
+
+	public enum EventType {
+		ALL,
+		STARTING,
+		STARTED,
+		STOPPING,
+		STOPPED,
+		FAILED_TO_START,
+		FAILED_TO_STOP,
+		I_NEW_CALL,
+		I_NEW_MESSAGE,
+		M_PERMISSION_REQUESTED,
+		M_PERMISSION_ACCEPTED,
+		M_PERMISSION_REFUSED;
+	}
 
 	public Stack(StackConfig config) {
 		this.instance = Stack.getInstance(config);
@@ -34,8 +48,20 @@ public class Stack {
 		this.@it.netgrid.gwt.sipml5.Stack::instance.stop(timeout);
 	}-*/;
 
-	public final native Call newCall(String type) /*-{
+	public final Call newCall(Call.Type type, Configuration config) {
+		return this.newCall(type.name().toLowerCase(), config);
+	}
+
+	public final Call newCall(Call.Type type) {
+		return this.newCall(type.name().toLowerCase());
+	}
+
+	private final native Call newCall(String type) /*-{
 		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('call-'+type);
+	}-*/;
+
+	private final native Call newCall(String type, Configuration config) /*-{
+		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('call-'+type, config);
 	}-*/;
 
 	public final native Registration newRegister() /*-{
@@ -54,13 +80,9 @@ public class Stack {
 		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('publish');
 	}-*/;
 
-	public final native ASession newSession(String type) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession(type);
-	}-*/;
-
-	public final native Call newCall(String type, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('call-'+type, config);
-	}-*/;
+	//	public final native ASession<?> newSession(String type) /*-{
+	//		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession(type);
+	//	}-*/;
 
 	public final native Registration newRegister(Configuration config) /*-{
 		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('register', config);
@@ -78,7 +100,7 @@ public class Stack {
 		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('publish', config);
 	}-*/;
 
-	public final native ASession newSession(String type, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession(type, config);
-	}-*/;
+	//	public final native ASession<?> newSession(String type, Configuration config) /*-{
+	//		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession(type, config);
+	//	}-*/;
 }

@@ -1,8 +1,8 @@
 package it.netgrid.gwt.sipml5.handler;
 
-import it.netgrid.gwt.sipml5.Event;
+import it.netgrid.gwt.sipml5.event.AEvent;
 
 
-public interface IEventHandler {
-	public void onEvent(Event event);
+public interface IEventHandler<E extends AEvent<?>> {
+	public void onEvent(E event);
 }
