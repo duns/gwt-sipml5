@@ -1,11 +1,5 @@
-package it.netgrid.gwt.sipml5;
+package it.netgrid.gwt.sipml5.config;
 
-import it.netgrid.gwt.sipml5.config.Bandwidth;
-import it.netgrid.gwt.sipml5.config.Configuration;
-import it.netgrid.gwt.sipml5.config.SipCap;
-import it.netgrid.gwt.sipml5.config.SipHeader;
-import it.netgrid.gwt.sipml5.config.StackConfig;
-import it.netgrid.gwt.sipml5.config.VideoSize;
 
 public class ConfigurationFactory {
 
