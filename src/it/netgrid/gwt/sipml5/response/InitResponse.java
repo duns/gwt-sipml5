@@ -4,6 +4,8 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class InitResponse extends JavaScriptObject {
 
+	protected InitResponse() {}
+
 	public native final void setMessage(String message) /*-{
 		this.message = message;
 	}-*/;

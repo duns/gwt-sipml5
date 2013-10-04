@@ -12,7 +12,7 @@ public class StackEvent extends AEvent<EventType> {
 	}
 
 	public native final ASession<?> getNewSession() /*-{
-		return this.@it.netgrid.gwt.sipml5.event.StackEvent::instance.newSession;
+		return this.@it.netgrid.gwt.sipml5.event.AEvent::instance.newSession;
 	}-*/;
 
 	@Override

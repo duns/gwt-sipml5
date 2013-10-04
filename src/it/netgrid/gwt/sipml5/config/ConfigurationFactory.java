@@ -3,6 +3,18 @@ package it.netgrid.gwt.sipml5.config;
 
 public class ConfigurationFactory {
 
+	private static ConfigurationFactory instance;
+
+	public static ConfigurationFactory get() {
+		if(ConfigurationFactory.instance == null) {
+			ConfigurationFactory.instance = new ConfigurationFactory();
+		}
+
+		return ConfigurationFactory.instance;
+	}
+
+	private ConfigurationFactory() {}
+
 	/**
 	 * Example: { expires : 200, audio_remote:
 	 * document.getElementById('audio_remote'), // <audio id="audio_remote"

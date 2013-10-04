@@ -29,19 +29,19 @@ public class Registration extends ASession<it.netgrid.gwt.sipml5.session.Registr
 	}
 
 	public final native void register() /*-{
-		this.@it.netgrid.gwt.sipml5.session.Registration::instance.register();
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.register();
 	}-*/;
 
 	public final native void register(Configuration config) /*-{
-		this.@it.netgrid.gwt.sipml5.session.Registration::instance.register(config);
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.register(config);
 	}-*/;
 
 	public final native void unregister() /*-{
-		this.@it.netgrid.gwt.sipml5.session.Registration::instance.unregister();
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.unregister();
 	}-*/;
 
 	public final native void unregister(Configuration config) /*-{
-		this.@it.netgrid.gwt.sipml5.session.Registration::instance.unregister(config);
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.unregister(config);
 	}-*/;
 
 	@Override

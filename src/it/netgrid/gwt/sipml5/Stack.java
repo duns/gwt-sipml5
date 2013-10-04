@@ -13,6 +13,8 @@ import com.google.gwt.core.client.JavaScriptObject;
 public class Stack {
 	private final JavaScriptObject instance;
 
+	public static boolean initialized;
+
 	public enum EventType {
 		ALL,
 		STARTING,
@@ -33,7 +35,7 @@ public class Stack {
 	}
 
 	private static native final JavaScriptObject getInstance(StackConfig config) /*-{
-		return new SIPml.Stack(config);
+		return new $wnd.SIPml.Stack(config);
 	}-*/;
 
 	public final native void setConfiguration(StackConfig config) /*-{
@@ -57,50 +59,52 @@ public class Stack {
 	}
 
 	private final native Call newCall(String type) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('call-'+type);
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('call-'+type);
+		return @it.netgrid.gwt.sipml5.session.Call::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
 	private final native Call newCall(String type, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('call-'+type, config);
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('call-'+type, config);
+		return @it.netgrid.gwt.sipml5.session.Call::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
 	public final native Registration newRegister() /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('register');
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('register');
+		return @it.netgrid.gwt.sipml5.session.Registration::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
 	public final native Message newMessage() /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('message');
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('message');
+		return @it.netgrid.gwt.sipml5.session.Message::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
 	public final native Subscribe newSubscribe() /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('subscribe');
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('subscribe');
+		return @it.netgrid.gwt.sipml5.session.Subscribe::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
 	public final native Publish newPublish() /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('publish');
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('publish');
+		return @it.netgrid.gwt.sipml5.session.Publish::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
-	//	public final native ASession<?> newSession(String type) /*-{
-	//		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession(type);
-	//	}-*/;
-
 	public final native Registration newRegister(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('register', config);
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('register', config);
+		return @it.netgrid.gwt.sipml5.session.Registration::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
 	public final native Message newMessage(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('message', config);
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('message', config);
+		return @it.netgrid.gwt.sipml5.session.Message::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
 	public final native Subscribe newSubscribe(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('subscribe', config);
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('subscribe', config);
+		return @it.netgrid.gwt.sipml5.session.Subscribe::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
 
 	public final native Publish newPublish(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('publish', config);
+		var s = this.@it.netgrid.gwt.sipml5.Stack::instance.newSession('publish', config);
+		return @it.netgrid.gwt.sipml5.session.Publish::new(Lcom/google/gwt/core/client/JavaScriptObject;)(s);
 	}-*/;
-
-	//	public final native ASession<?> newSession(String type, Configuration config) /*-{
-	//		return this.@it.netgrid.gwt.sipml5.Stack::instance.newSession(type, config);
-	//	}-*/;
 }

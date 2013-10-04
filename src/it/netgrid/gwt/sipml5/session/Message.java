@@ -31,19 +31,19 @@ public class Message extends ASession<it.netgrid.gwt.sipml5.session.Message.Even
 	}
 
 	public final native int send(String to, String content, String contentType, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Message::instance.send(to, content, contentType, config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.send(to, content, contentType, config);
 	}-*/;
 
 	public final native int send(String to, String content, String contentType) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Message::instance.send(to, content, contentType);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.send(to, content, contentType);
 	}-*/;
 
 	public final native int send(String to, String content) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Message::instance.send(to, content);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.send(to, content);
 	}-*/;
 
 	public final native int send(String to) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Message::instance.send(to);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.send(to);
 	}-*/;
 
 	@Override

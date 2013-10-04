@@ -29,27 +29,27 @@ public class Publish extends ASession<it.netgrid.gwt.sipml5.session.Publish.Even
 	}
 
 	public final native int publish(String content, String contentType, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Publish::instance.publish(content, contentType, config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.publish(content, contentType, config);
 	}-*/;
 
 	public final native int publish(String content) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Publish::instance.publish(content);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.publish(content);
 	}-*/;
 
 	public final native int publish(String content, String contentType) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Publish::instance.publish(content, contentType);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.publish(content, contentType);
 	}-*/;
 
 	public final native int publish() /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Publish::instance.publish();
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.publish();
 	}-*/;
 
 	public final native void unpublish() /*-{
-		this.@it.netgrid.gwt.sipml5.session.Publish::instance.unpublish();
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.unpublish();
 	}-*/;
 
 	public final native void unpublish(Configuration config) /*-{
-		this.@it.netgrid.gwt.sipml5.session.Publish::instance.unpublish(config);
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.unpublish(config);
 	}-*/;
 
 	@Override

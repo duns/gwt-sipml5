@@ -30,19 +30,19 @@ public class Subscribe extends ASession<it.netgrid.gwt.sipml5.session.Subscribe.
 	}
 
 	public final native int subscribe(String to) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Subscribe::instance.subscribe(to);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.subscribe(to);
 	}-*/;
 
 	public final native int subscribe(String to, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Subscribe::instance.subscribe(to, config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.subscribe(to, config);
 	}-*/;
 
 	public final native int unsubscribe(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Subscribe::instance.unsubscribe(config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.unsubscribe(config);
 	}-*/;
 
 	public final native int unsubscribe() /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Subscribe::instance.unsubscribe();
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.unsubscribe();
 	}-*/;
 
 	@Override

@@ -55,64 +55,64 @@ public class Call extends ASession<it.netgrid.gwt.sipml5.session.Call.EventType>
 		I_ECT_REQUESTED;
 	}
 
-	protected Call(JavaScriptObject instance) {
+	public Call(JavaScriptObject instance) {
 		super(instance);
 	}
 
 	public final native int acceptTransfer(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.acceptTransfer(config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.acceptTransfer(config);
 	}-*/;
 
 	public final native int dtmf(char digit) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.dtmf(digit);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.dtmf(digit);
 	}-*/;
 
 	public final native int dtmf(char digit, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.dtmf(digit, config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.dtmf(digit, config);
 	}-*/;
 
 	public final native int info() /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.info();
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.info();
 	}-*/;
 
 	public final native int info(String content) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.info(content);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.info(content);
 	}-*/;
 
 	public final native int info(String content, String contentType) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.info(content, contentType);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.info(content, contentType);
 	}-*/;
 
 	public final native int info(String content, String contentType, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.info(content, contentType, config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.info(content, contentType, config);
 	}-*/;
 
 	public final native int hangup(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.hangup(config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.hangup(config);
 	}-*/;
 
 	public final native int resume() /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.resume();
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.resume();
 	}-*/;
 
 	public final native int resume(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.resume(config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.resume(config);
 	}-*/;
 
 	public final native int rejectTransfer() /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.rejectTransfer();
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.rejectTransfer();
 	}-*/;
 
 	public final native int rejectTransfer(Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.rejectTransfer(config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.rejectTransfer(config);
 	}-*/;
 
 	public final native int transfer(String to, Configuration config) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.transfer(to, config);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.transfer(to, config);
 	}-*/;
 
 	public final native int transfer(String to) /*-{
-		return this.@it.netgrid.gwt.sipml5.session.Call::instance.transfer(to);
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.transfer(to);
 	}-*/;
 
 	@Override
