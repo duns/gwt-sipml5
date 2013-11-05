@@ -31,7 +31,7 @@
 			<arguments>
 				<dictionary>
 					<key>LaunchConfigHandle</key>
-					<value>&lt;project&gt;/.externalToolBuilders/Makejar.launch</value>
+					<value>&lt;project&gt;/.externalToolBuilders/GWT-Simpl5-jar.launch</value>
 				</dictionary>
 			</arguments>
 		</buildCommand>
