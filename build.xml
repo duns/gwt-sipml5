@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gwt-sipml5" default="sipml5-jar" basedir=".">
+  <target name="sipml5-jar" description="Create jar version of GWT module">
+  	<jar jarfile="bin/gwt-sipml5-0.1a.jar" basedir="src">
+  		<fileset dir="src">
+  			<include name="it/**"/>
+  		</fileset>
+  	</jar>
+  </target>
+</project>
