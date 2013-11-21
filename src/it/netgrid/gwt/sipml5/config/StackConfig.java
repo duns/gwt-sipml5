@@ -50,7 +50,7 @@ public class StackConfig extends JavaScriptObject {
 		}-*/;
 
 	public native final void setWebsocketProxyUrl(String websocketProxyUrl) /*-{
-			this.websocket_proxy_url = websocket_proxy_url;
+			this.websocket_proxy_url = websocketProxyUrl;
 		}-*/;
 
 	public native final String getWebsocketProxyUrl() /*-{
