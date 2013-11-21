@@ -53,9 +53,7 @@ public class ConfigurationFactory {
 		return {
 			"realm" : "",
 			"impi" : "",
-			"impu" : "",
-			"sip_headers" : [],
-			"ice_servers" : []
+			"impu" : ""
 		};
 	}-*/;
 
