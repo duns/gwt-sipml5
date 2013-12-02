@@ -2,9 +2,6 @@ package it.netgrid.gwt.sipml5.session;
 
 import it.netgrid.gwt.sipml5.AEventTarget;
 import it.netgrid.gwt.sipml5.config.Configuration;
-import it.netgrid.gwt.sipml5.event.AEvent;
-import it.netgrid.gwt.sipml5.event.ASessionEvent;
-import it.netgrid.gwt.sipml5.handler.IEventHandler;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -42,29 +39,4 @@ public abstract class ASession<T> extends AEventTarget<T> {
 		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance
 				.reject(configuration);
 	}-*/;
-
-	// FIXME rename later
-	public void addSessionEventListener(T type, IEventHandler<ASessionEvent<T>> callback) {
-		this.addEventListener(this.getTypeName(type), callback);
-	}
-
-	// FIXME rename later
-	public void removeSessionEventListener(T type) {
-		this.removeEventListener(this.getTypeName(type));
-	}
-
-	private final native void addEventListener(String type, IEventHandler<ASessionEvent<T>> callback) /*-{
-
-		var callbackFunc = function(e) {
-			var ev = @it.netgrid.gwt.sipml5.event.ASessionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-			callback.@it.netgrid.gwt.sipml5.handler.IEventHandler::onEvent(Lit/netgrid/gwt/sipml5/event/AEvent;)(ev);
-		};
-
-		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.addEventListener(type, callbackFunc);
-	}-*/;
-
-	private final native void removeEventListener(String type) /*-{
-		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.removeEventListener(type);
-	}-*/;
-
 }

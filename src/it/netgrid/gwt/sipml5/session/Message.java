@@ -2,6 +2,7 @@ package it.netgrid.gwt.sipml5.session;
 
 import it.netgrid.gwt.sipml5.config.Configuration;
 import it.netgrid.gwt.sipml5.event.AEvent;
+import it.netgrid.gwt.sipml5.handler.IEventHandler;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -45,6 +46,18 @@ public class Message extends ASession<it.netgrid.gwt.sipml5.session.Message.Even
 	public final native int send(String to) /*-{
 		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.send(to);
 	}-*/;
+
+	@Override
+	protected final native void addEventListener(String type, IEventHandler<AEvent<it.netgrid.gwt.sipml5.session.Message.EventType>> callback) /*-{
+
+		var callbackFunc = function(e) {
+			var ev = @it.netgrid.gwt.sipml5.event.MessageEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+			callback.@it.netgrid.gwt.sipml5.handler.IEventHandler::onEvent(Lit/netgrid/gwt/sipml5/event/AEvent;)(ev);
+		};
+
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.addEventListener(type, callbackFunc);
+	}-*/;
+
 
 	@Override
 	protected String getTypeName(EventType type) {

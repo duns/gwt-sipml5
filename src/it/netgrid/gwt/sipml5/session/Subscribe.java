@@ -2,6 +2,7 @@ package it.netgrid.gwt.sipml5.session;
 
 import it.netgrid.gwt.sipml5.config.Configuration;
 import it.netgrid.gwt.sipml5.event.AEvent;
+import it.netgrid.gwt.sipml5.handler.IEventHandler;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -43,6 +44,17 @@ public class Subscribe extends ASession<it.netgrid.gwt.sipml5.session.Subscribe.
 
 	public final native int unsubscribe() /*-{
 		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.unsubscribe();
+	}-*/;
+	
+	@Override
+	protected final native void addEventListener(String type, IEventHandler<AEvent<it.netgrid.gwt.sipml5.session.Subscribe.EventType>> callback) /*-{
+
+		var callbackFunc = function(e) {
+			var ev = @it.netgrid.gwt.sipml5.event.SubscribeEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+			callback.@it.netgrid.gwt.sipml5.handler.IEventHandler::onEvent(Lit/netgrid/gwt/sipml5/event/AEvent;)(ev);
+		};
+
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.addEventListener(type, callbackFunc);
 	}-*/;
 
 	@Override

@@ -2,6 +2,7 @@ package it.netgrid.gwt.sipml5.session;
 
 import it.netgrid.gwt.sipml5.config.Configuration;
 import it.netgrid.gwt.sipml5.event.AEvent;
+import it.netgrid.gwt.sipml5.handler.IEventHandler;
 
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -51,6 +52,18 @@ public class Publish extends ASession<it.netgrid.gwt.sipml5.session.Publish.Even
 	public final native void unpublish(Configuration config) /*-{
 		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.unpublish(config);
 	}-*/;
+	
+	@Override
+	protected final native void addEventListener(String type, IEventHandler<AEvent<it.netgrid.gwt.sipml5.session.Publish.EventType>> callback) /*-{
+
+		var callbackFunc = function(e) {
+			var ev = @it.netgrid.gwt.sipml5.event.PublishEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+			callback.@it.netgrid.gwt.sipml5.handler.IEventHandler::onEvent(Lit/netgrid/gwt/sipml5/event/AEvent;)(ev);
+		};
+
+		this.@it.netgrid.gwt.sipml5.AEventTarget::instance.addEventListener(type, callbackFunc);
+	}-*/;
+
 
 	@Override
 	protected String getTypeName(EventType type) {
