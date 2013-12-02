@@ -13,7 +13,7 @@ public class SubscribeEvent extends ASessionEvent<EventType> {
 
 	@Override
 	protected EventType getTypeByName(String name) {
-		return name == AEvent.AllWildcard ? EventType.ALL : EventType.valueOf(name);
+		return name == AEvent.AllWildcard ? EventType.ALL : EventType.valueOf(name.toUpperCase());
 	}
 
 }

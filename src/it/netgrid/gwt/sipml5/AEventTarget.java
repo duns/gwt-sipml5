@@ -13,11 +13,11 @@ public abstract class AEventTarget<T> {
 		this.instance = instance;
 	}
 
-	public final void addEventListener(T type, IEventHandler<AEvent<T>> callback) {
+	public void addEventListener(T type, IEventHandler<AEvent<T>> callback) {
 		this.addEventListener(this.getTypeName(type), callback);
 	}
 
-	public final void removeEventListener(T type) {
+	public void removeEventListener(T type) {
 		this.removeEventListener(this.getTypeName(type));
 	}
 

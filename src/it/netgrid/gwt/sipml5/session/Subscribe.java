@@ -47,6 +47,6 @@ public class Subscribe extends ASession<it.netgrid.gwt.sipml5.session.Subscribe.
 
 	@Override
 	protected String getTypeName(EventType type) {
-		return type == EventType.ALL ? AEvent.AllWildcard : type.name();
+		return type == EventType.ALL ? AEvent.AllWildcard : type.name().toLowerCase();
 	}
 }

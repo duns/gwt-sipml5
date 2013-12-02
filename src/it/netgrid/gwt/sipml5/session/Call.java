@@ -59,8 +59,16 @@ public class Call extends ASession<it.netgrid.gwt.sipml5.session.Call.EventType>
 		super(instance);
 	}
 
+	public final native int acceptTransfer() /*-{
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.acceptTransfer();
+	}-*/;
+
 	public final native int acceptTransfer(Configuration config) /*-{
 		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.acceptTransfer(config);
+	}-*/;
+
+	public final native int call(String to) /*-{
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.call(to);
 	}-*/;
 
 	public final native int dtmf(char digit) /*-{
@@ -87,8 +95,20 @@ public class Call extends ASession<it.netgrid.gwt.sipml5.session.Call.EventType>
 		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.info(content, contentType, config);
 	}-*/;
 
+	public final native int hangup() /*-{
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.hangup();
+	}-*/;
+
 	public final native int hangup(Configuration config) /*-{
 		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.hangup(config);
+	}-*/;
+
+	public final native int hold() /*-{
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.hold();
+	}-*/;
+
+	public final native int hold(Configuration config) /*-{
+		return this.@it.netgrid.gwt.sipml5.AEventTarget::instance.hold(config);
 	}-*/;
 
 	public final native int resume() /*-{
@@ -117,6 +137,6 @@ public class Call extends ASession<it.netgrid.gwt.sipml5.session.Call.EventType>
 
 	@Override
 	protected String getTypeName(EventType type) {
-		return type == EventType.ALL ? AEvent.AllWildcard : type.name();
+		return type == EventType.ALL ? AEvent.AllWildcard : type.name().toLowerCase();
 	}
 }

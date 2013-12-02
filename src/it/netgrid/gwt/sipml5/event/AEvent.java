@@ -28,7 +28,7 @@ public abstract class AEvent<T> {
 		this.@it.netgrid.gwt.sipml5.event.AEvent::instance.type = type;
 	}-*/;
 
-	protected native final String getTypeString() /*-{
+	public native final String getTypeString() /*-{
 		return this.@it.netgrid.gwt.sipml5.event.AEvent::instance.type;
 	}-*/;
 

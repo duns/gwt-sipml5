@@ -4,7 +4,7 @@ import it.netgrid.gwt.sipml5.handler.IInitHandler;
 
 public class SipMl {
 
-	public final native static String getNavigatorFriedlyName() /*-{
+	public final native static String getNavigatorFriendlyName() /*-{
 		return $wnd.SIPml.getNavigatorFriendlyName();
 	}-*/;
 
@@ -59,6 +59,10 @@ public class SipMl {
 
 	public native final static boolean isWebSocketSupported() /*-{
 		return $wnd.SIPml.isWebSocketSupported();
+	}-*/;
+	
+	public native final static boolean isWebRtc4AllSupported() /*-{
+		return $wnd.SIPml.isWebRtc4AllSupported();
 	}-*/;
 
 	public native final static void setDebugLevel(String level) /*-{
