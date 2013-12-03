@@ -1,6 +1,7 @@
 /.settings
 /.project
 /.classpath
+/.externalToolBuilders
 /gwt-unitCache
 /war/WEB-INF/classes
 /target
