@@ -8,6 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>GWT SIPML5 Wrapper</name>
+	<description>GWT SIPML5 Wrapper</description>
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
