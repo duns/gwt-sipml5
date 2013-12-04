@@ -10,13 +10,19 @@
 	<name>GWT SIPML5 Wrapper</name>
 	<description>GWT SIPML5 Wrapper</description>
 
+	<properties>
+		<gwt.version>2.5.1</gwt.version>
+		<gwt.plugin.version>2.5.1</gwt.plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	</properties>
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>gwt-maven-plugin</artifactId>
 				<groupId>org.codehaus.mojo</groupId>
-				<version>2.5.1</version>
+				<version>${gwt.plugin.version}</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -37,7 +43,7 @@
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-user</artifactId>
-			<version>2.5.1</version>
+			<version>${gwt.version}</version>
 		</dependency>
 	</dependencies>
 
