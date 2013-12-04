@@ -17,7 +17,6 @@
   	</properties>
 
 	<build>
-		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>gwt-maven-plugin</artifactId>
