@@ -6,6 +6,7 @@ import org.sipml5.gwt.sipml5.config.Bandwidth;
 import org.sipml5.gwt.sipml5.config.Configuration;
 import org.sipml5.gwt.sipml5.config.ConfigurationFactory;
 import org.sipml5.gwt.sipml5.config.SipCap;
+import org.sipml5.gwt.sipml5.config.SipHeader;
 import org.sipml5.gwt.sipml5.config.StackConfig;
 import org.sipml5.gwt.sipml5.config.VideoSize;
 import org.sipml5.gwt.sipml5.event.AEvent;
@@ -474,12 +475,12 @@ public class GwtSipmlDemo implements EntryPoint, KeyUpHandler,
 		stackConfig.setEnableRtcwebBreaker(false);
 		stackConfig.setEnableClick2Call(false);
 
-		// SipHeader sip1 = ConfigurationFactory.get().buildSipHeader();
+		SipHeader sip1 = ConfigurationFactory.get().buildSipHeader();
 		// sip1.setName("User-Agent");
 		// sip1.setValue("IM-client/OMA1.0 sipML5-v1.2013.08.10B");
 		// stackConfig.addSipHeader(sip1);
 
-		// SipHeader sip2 = ConfigurationFactory.get().buildSipHeader();
+		SipHeader sip2 = ConfigurationFactory.get().buildSipHeader();
 		// sip2.setName("Organization");
 		// sip2.setValue("CERN/ATLAS");
 		// stackConfig.addSipHeader(sip2);
@@ -500,21 +501,18 @@ public class GwtSipmlDemo implements EntryPoint, KeyUpHandler,
 
 					registerConfig.setExpires(200);
 
-					// SipCap sipCap1 =
-					// ConfigurationFactory.get().buildSipCap();
-					// sipCap1.setName("+g.oma.sip-im");
-					// registerConfig.addSipCap(sipCap1);
-					//
-					// SipCap sipCap2 =
-					// ConfigurationFactory.get().buildSipCap();
-					// sipCap2.setName("+audio");
-					// registerConfig.addSipCap(sipCap2);
-					//
-					// SipCap sipCap3 =
-					// ConfigurationFactory.get().buildSipCap();
-					// sipCap3.setName("language");
-					// sipCap3.setValue("\"en,fr\"");
-					// registerConfig.addSipCap(sipCap3);
+					SipCap sipCap1 = ConfigurationFactory.get().buildSipCap();
+					sipCap1.setName("+g.oma.sip-im");
+					registerConfig.addSipCap(sipCap1);
+
+					SipCap sipCap2 = ConfigurationFactory.get().buildSipCap();
+					sipCap2.setName("+audio");
+					registerConfig.addSipCap(sipCap2);
+
+					SipCap sipCap3 = ConfigurationFactory.get().buildSipCap();
+					sipCap3.setName("language");
+					sipCap3.setValue("\"en,fr\"");
+					registerConfig.addSipCap(sipCap3);
 
 					sipSessionRegister = sipStack.newRegister(registerConfig);
 					sipSessionRegister

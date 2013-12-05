@@ -27,7 +27,8 @@ then startup the resulting jar using the start.sh script in the gwt-sipml5-demo 
 ```
 $ ./start.sh
 ```
-(start.sh uses the war-bootstrap.jar from [mckamey](https://bitbucket.org/mckamey/war-bootstrap))
+(start.sh uses the war-bootstrap.jar from [mckamey](https://bitbucket.org/mckamey/war-bootstrap),
+which you need to separately clone and create)
 
 goto the following url in a WebRTC supported browser:
 
