@@ -1,0 +1,255 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Keywords" content="duns, doubango, GWT, sipML5, VoIP, HTML5, WebRTC, RTCWeb, SIP, IMS, Video chat, VP8, live demo " />
+    <meta name="Description" content="GWT, HTML5 SIP client using WebRTC framework" />
+    <meta name="author" content="Doubango Telecom, Translated and adapted by Mark Donszelmann" />
+
+    <!--                                                               -->
+    <!-- Consider inlining CSS to reduce the number of requested files -->
+    <!--                                                               -->
+    <link href="./assets/css/bootstrap.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="GwtSipmlDemo.css" />
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/ico/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png" />    
+
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>GWT SIPML5 Demo</title>
+
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" src="GwtSipmlDemo/GwtSipmlDemo.nocache.js"></script>
+  </head>
+
+  <body style="cursor:wait">
+     <!-- OPTIONAL: include this if you want history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+ 
+    <div class="navbar navbar-fixed-top">
+        <div id="divNavbarInner" class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a>
+                <img alt="sipML5" class="brand" src="./images/sipml-34x39.png" />
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span4 well">
+                <div id="txtRegStatus"> </div>
+                 <h2>
+                    Registration</h2>
+                <br />
+                <table style='width: 100%'>
+                    <tr>
+                        <td>
+                            <label style="height: 100%">
+                                Display Name:</label>
+                        </td>
+                        <td>
+                        	<div id="txtDisplayName"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="height: 100%">
+                                Private Identity<sup>*</sup>:</label>
+                        </td>
+                        <td>
+                            <div id="txtPrivateIdentity"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="height: 100%">
+                                Public Identity<sup>*</sup>:</label>
+                        </td>
+                        <td>
+                            <div id="txtPublicIdentity"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="height: 100%">Password:</label>
+                        </td>
+                        <td>
+                            <div id="txtPassword"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="height: 100%">Realm<sup>*</sup>:</label>
+                        </td>
+                        <td>
+                            <div id="txtRealm"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="height: 100%">WebSocket Server URL:</label>
+                        </td>
+                        <td>
+                            <div id="txtWebsocketProxyUrl"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="height: 100%">SIP Outbound Proxy URL:</label>
+                        </td>
+                        <td>
+                            <div id="txtOutboundProxyUrl"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="right">
+                            <div id="btnRegister"> </div>
+                            &nbsp;
+                            <div id="btnUnRegister"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p class="small"><sup>*</sup> <i>Mandatory Field</i></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <a class="btn" href="http://code.google.com/p/sipml5/wiki/Public_SIP_Servers" target="_blank">Need SIP account?</a>
+                        </td>
+                    </tr>
+<!-- 
+                    <tr>
+                        <td colspan="3">
+                            <a class="btn" href="./expert.htm" target="_blank">Expert mode?</a>
+                        </td>
+                    </tr>
+-->
+                </table>
+            </div>
+            <div id="divCallCtrl" class="span7 well" style='display:table-cell; vertical-align:middle'>
+                <div id="txtCallStatus">
+                </div>
+                <h2>
+                    Call control
+                </h2>
+                <br />
+                <table style='width: 100%;'>
+                    <tr>
+                        <td style="white-space:nowrap;">
+                            <div id="txtPhoneNumber"> </div>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="1" align="right">
+                            <div class="btn-toolbar" style="margin: 0; vertical-align:middle">
+                                <div id="divBtnCallGroup" class="btn-group">
+                                    <div id="btnCall"> </div>
+                                </div>&nbsp;&nbsp;
+                                <div class="btn-group">
+                                    <div id="btnHangUp"></div>
+                                </div>
+                             </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdVideo" class='tab-video'>
+                            <div id="divVideo" class='div-video'>
+                                <div id="divVideoRemote" style='border:1px solid #000; height:100%; width:100%'>
+                                    <video class="video" width="100%" height="100%" id="video_remote" autoplay="autoplay" style="opacity: 0; 
+                                        background-color: #000000; -webkit-transition-property: opacity; -webkit-transition-duration: 2s;">
+                                    </video>
+                                </div>
+                                <div id="divVideoLocal" style='border:0px solid #000'>
+                                    <video class="video" width="88px" height="72px" id="video_local" autoplay="autoplay" muted="true" style="opacity: 0;
+                                        margin-top: -80px; margin-left: 5px; background-color: #000000; -webkit-transition-property: opacity;
+                                        -webkit-transition-duration: 2s;">
+                                    </video>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                       <td align='center'>
+                            <div id='divCallOptions' class='call-options' style='opacity: 0; margin-top: 3px'>
+                                <input type="button" class="btn" style="" id="btnFullScreen" value="FullScreen" disabled onclick='toggleFullScreen();' /> &nbsp;
+                                <input type="button" class="btn" style="" id="btnHoldResume" value="Hold" onclick='sipToggleHoldResume();' /> &nbsp;
+                                <input type="button" class="btn" style="" id="btnTransfer" value="Transfer" onclick='sipTransfer();' /> &nbsp;
+                                <input type="button" class="btn" style="" id="btnKeyPad" value="KeyPad" onclick='openKeyPad();' />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <br />
+        <footer>
+            <p>&copy; Doubango Telecom 2012-2013 <br />
+            <p>&copy; GWT adaptation by Mark D&ouml;nszelmann 2013 <br />
+             </p>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <!-- Glass Panel -->
+    <div id='divGlassPanel' class='glass-panel' style='visibility:hidden'></div>
+    <!-- Call button options -->
+    <ul id="ulCallOptions" class="dropdown-menu" style="visibility:hidden">
+        <li><a href="#" onclick='sipCall("call-audio");'>Audio</a></li>
+        <li><a href="#" onclick='sipCall("call-audiovideo");'>Video</a></li>
+        <li id='liScreenShare' ><a href="#" onclick='sipCall("call-screenshare");'>Screen Share</a></li>
+        <li class="divider"></li>
+        <li><a href="#" onclick='uiDisableCallOptions();'><b>Disable these options</b></a></li>
+    </ul>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="./assets/js/jquery.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-scrollspy.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-tooltip.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-button.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-carousel.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-typeahead.js"></script>
+
+    <!-- Audios -->
+    <audio id="audio_remote" autoplay="autoplay"></audio>
+    <div id="ringtone"></div>
+    <div id="ringbacktone"></div>
+    <div id="dtmfTone"></div>
+  </body>
+</html>

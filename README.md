@@ -1,11 +1,14 @@
-# GWT SIPML5 Wrapper
+# GWT SIPML5 Package
 
-This library allows Java to access to the JavaScript SipML library from sipml5.org. This library is compiled using 
-GWT (Google Web Toolkit). A demo package is available under [gwt-sipml5-demo](https://bitbucket.org/duns/gwt-sipml5-demo).
+GWT SIPML5 allows Java to access the JavaScript SipML library from sipml5.org using GWT (Google Web Toolkit).
+The package consists of a library (gwt-sipml5, originally from [it.netgrid](https://bitbucket.org/netgrid/gwt-sipml5), 
+but adapted to work with the demo) and a demo webapp that uses the library. 
+
+The demo is a reimplementation in Java of the sipml5 live demo from http://sipml5.org using GWT (Google Web Toolkit).
 
 Release sipml5 1.3.203 from https://code.google.com/p/sipml5/wiki/Downloads is included.
 
-## Building the library
+## Building the library and the demo
 
 Clone this repository
 
@@ -13,14 +16,29 @@ Clone this repository
 $ git clone https://bitbucket.org/duns/gwt-sipml5.git
 ```
 
-Run maven install
+Run maven
 
 ```
-$ mvn clean install
+$ mvn
 ```
 
-See the [gwt-sipml5-demo](https://bitbucket.org/duns/gwt-sipml5-demo) for further instructions.
+then startup the resulting jar using the start.sh script in the gwt-sipml5-demo directory, or use the war in a webapp container:
+
+```
+$ ./start.sh
+```
+(start.sh uses the war-bootstrap.jar from https://bitbucket.org/mckamey/war-bootstrap)
+
+goto the following url in a WebRTC supported browser:
+
+```
+localhost:1234
+```
+
+get a sip account (getonsip.com) and set the authentication details in the panel and make a call. 
 
 
-Mark Donszelmann
+
+
+Mark Donszelmann mailto:Mark.Donszelmann@gmail.com
  
