@@ -6,7 +6,6 @@ import org.sipml5.gwt.sipml5.config.Bandwidth;
 import org.sipml5.gwt.sipml5.config.Configuration;
 import org.sipml5.gwt.sipml5.config.ConfigurationFactory;
 import org.sipml5.gwt.sipml5.config.SipCap;
-import org.sipml5.gwt.sipml5.config.SipHeader;
 import org.sipml5.gwt.sipml5.config.StackConfig;
 import org.sipml5.gwt.sipml5.config.VideoSize;
 import org.sipml5.gwt.sipml5.event.AEvent;
@@ -475,14 +474,14 @@ public class GwtSipmlDemo implements EntryPoint, KeyUpHandler,
 		stackConfig.setEnableRtcwebBreaker(false);
 		stackConfig.setEnableClick2Call(false);
 
-		SipHeader sip1 = ConfigurationFactory.get().buildSipHeader();
+		// SipHeader sip1 = ConfigurationFactory.get().buildSipHeader();
 		// sip1.setName("User-Agent");
 		// sip1.setValue("IM-client/OMA1.0 sipML5-v1.2013.08.10B");
 		// stackConfig.addSipHeader(sip1);
-
-		SipHeader sip2 = ConfigurationFactory.get().buildSipHeader();
+		//
+		// SipHeader sip2 = ConfigurationFactory.get().buildSipHeader();
 		// sip2.setName("Organization");
-		// sip2.setValue("CERN/ATLAS");
+		// sip2.setValue("Mark Donszelmann");
 		// stackConfig.addSipHeader(sip2);
 
 		stackConfig.setEventsHandler("*", new IStackEventHandler() {

@@ -25,7 +25,7 @@ public abstract class AEventTarget<T> {
 //
 //		var callbackFunc = function(e) {
 //			var ev = @org.sipml5.gwt.sipml5.event.AEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-//			callback.@org.sipml5.gwt.sipml5.handler.IEventHandler::onEvent(Lit/netgrid/gwt/sipml5/event/AEvent;)(ev);
+//			callback.@org.sipml5.gwt.sipml5.handler.IEventHandler::onEvent(Lorg/sipml5/gwt/sipml5/event/AEvent;)(ev);
 //		};
 //
 //		this.@org.sipml5.gwt.sipml5.AEventTarget::instance.addEventListener(type, callbackFunc);
