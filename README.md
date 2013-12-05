@@ -35,7 +35,7 @@ goto the following url in a WebRTC supported browser:
 localhost:1234
 ```
 
-get a sip account (getonsip.com) and set the authentication details in the panel and make a call. 
+get a sip account [GetOnSip](getonsip.com) and set the authentication details in the panel and make a call. 
 
 
 
