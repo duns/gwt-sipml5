@@ -1709,8 +1709,6 @@ SIPml.Session.Message.prototype.send = function (s_to, o_content, s_content_type
     return this.o_session.send(o_content, s_content_type);
 }
 
-
-
 // ================================== SIPml.Session.Publish ==========================================
 
 

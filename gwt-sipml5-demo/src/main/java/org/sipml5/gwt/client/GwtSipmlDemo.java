@@ -951,8 +951,7 @@ public class GwtSipmlDemo implements EntryPoint, KeyUpHandler,
 	}
 
 	private void uiBtnCallSetText(String text) {
-		switch (text) {
-		case "Call": {
+		if (text.equalsIgnoreCase("Call")) {
 			final boolean disableCallBtnOptions = false;
 			btnCall.setText(disableCallBtnOptions ? "Call"
 					: "Call <span id=\"spanCaret\" class=\"caret\">");
@@ -982,10 +981,7 @@ public class GwtSipmlDemo implements EntryPoint, KeyUpHandler,
 			// divBtnCallGroup) {
 			// document.body.appendChild(ulCallOptions);
 			// }
-
-			break;
-		}
-		default: {
+		} else {
 			btnCall.setText(text);
 			btnCall.setHTML(text);
 			btnCall.getElement().setAttribute("class", "btn btn-primary");
@@ -1001,8 +997,6 @@ public class GwtSipmlDemo implements EntryPoint, KeyUpHandler,
 			// if(ulCallOptions.parentNode == divBtnCallGroup){
 			// document.body.appendChild(ulCallOptions);
 			// }
-			break;
-		}
 		}
 	}
 
