@@ -18,6 +18,7 @@
 	</scm>
 
 	<properties>
+		<gwt-appengine.version>1.8.8</gwt-appengine.version>
 		<gwt.version>2.5.1</gwt.version>
 		<gwt.plugin.version>2.5.1</gwt.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,10 +26,11 @@
 		<gwt.style>PRETTY</gwt.style>
 		<gwt-slf4j.version>0.0.2</gwt-slf4j.version>
 		<junit.version>4.7</junit.version>
+		<maven-appengine-plugin.version>1.8.8</maven-appengine-plugin.version>
 		<maven-clean-plugin.version>2.5</maven-clean-plugin.version>
 		<maven-war-plugin.version>2.4</maven-war-plugin.version>
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
 		<slf4j-api.version>1.7.5</slf4j-api.version>
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 	</properties>
@@ -102,7 +104,11 @@
 					<artifactId>maven-war-plugin</artifactId>
 					<version>${maven-war-plugin.version}</version>
 				</plugin>
-			</plugins>
+<plugin>
+   <groupId>com.google.appengine</groupId>
+   <artifactId>appengine-maven-plugin</artifactId>
+   <version>${maven-appengine-plugin.version}</version>
+</plugin>			</plugins>
 		</pluginManagement>
 	</build>
 
@@ -126,6 +132,11 @@
 				<version>${gwt.version}</version>
 				<scope>runtime</scope>
 			</dependency>
+    <dependency>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-api-1.0-sdk</artifactId>
+        <version>${gwt-appengine.version}</version>
+    </dependency>
 
 
 			<dependency>
