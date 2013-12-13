@@ -6,6 +6,8 @@ but adapted to work with the demo) and a demo webapp that uses the library.
 
 The demo is a reimplementation in Java of the sipml5 live demo from [SipMl5](http://sipml5.org) using GWT (Google Web Toolkit).
 
+Try the <a href="http://gwt-sipml5.appspot.com/">Live Demo"</a> on app engine.
+
 Release sipml5 1.3.203 from [SipMl5 Downloads](https://code.google.com/p/sipml5/wiki/Downloads) is included.
 
 ## Status

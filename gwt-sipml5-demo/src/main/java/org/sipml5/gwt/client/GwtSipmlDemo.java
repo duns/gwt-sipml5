@@ -904,29 +904,29 @@ public class GwtSipmlDemo implements EntryPoint, KeyUpHandler,
 	}
 
 	private void uiVideoDisplayEvent(boolean local, boolean added) {
-		Video video = local ? videoLocal : videoRemote;
-
-		if (added) {
-			if (SipMl.isWebRtc4AllSupported()) {
-				// if (local){ if(window.__o_display_local)
-				// window.__o_display_local.style.visibility = "visible"; }
-				// else { if(window.__o_display_remote)
-				// window.__o_display_remote.style.visibility = "visible"; }
-			} else {
-				// video.style.opacity = 1;
-			}
-			uiVideoDisplayShowHide(true);
-		} else {
-			if (SipMl.isWebRtc4AllSupported()) {
-				// if (local){ if(window.__o_display_local)
-				// window.__o_display_local.style.visibility = "hidden"; }
-				// else { if(window.__o_display_remote)
-				// window.__o_display_remote.style.visibility = "hidden"; }
-			} else {
-				// video.style.opacity = 0;
-			}
-			fullScreen(false);
-		}
+//		Video video = local ? videoLocal : videoRemote;
+//
+//		if (added) {
+//			if (SipMl.isWebRtc4AllSupported()) {
+//				// if (local){ if(window.__o_display_local)
+//				// window.__o_display_local.style.visibility = "visible"; }
+//				// else { if(window.__o_display_remote)
+//				// window.__o_display_remote.style.visibility = "visible"; }
+//			} else {
+//				// video.style.opacity = 1;
+//			}
+//			uiVideoDisplayShowHide(true);
+//		} else {
+//			if (SipMl.isWebRtc4AllSupported()) {
+//				// if (local){ if(window.__o_display_local)
+//				// window.__o_display_local.style.visibility = "hidden"; }
+//				// else { if(window.__o_display_remote)
+//				// window.__o_display_remote.style.visibility = "hidden"; }
+//			} else {
+//				// video.style.opacity = 0;
+//			}
+//			fullScreen(false);
+//		}
 	}
 
 	private void uiVideoDisplayShowHide(boolean show) {

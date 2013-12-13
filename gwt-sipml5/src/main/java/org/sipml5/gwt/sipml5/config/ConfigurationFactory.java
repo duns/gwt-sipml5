@@ -31,8 +31,7 @@ public class ConfigurationFactory {
 	public final native Configuration buildConfig() /*-{
 		return {
 			expires : 200,
-			sip_caps : [],
-			sip_headers : []
+			sip_caps : []
 		};
 	}-*/;
 
@@ -53,8 +52,7 @@ public class ConfigurationFactory {
 		return {
 			"realm" : "",
 			"impi" : "",
-			"impu" : "",
-			"sip_headers" : []
+			"impu" : ""
 		};
 	}-*/;
 
